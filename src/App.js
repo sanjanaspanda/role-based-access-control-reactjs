@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     fetchUsers();
     fetchRoles();
-  }, []);
+  }, [fetchUsers, fetchUsers]);
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
