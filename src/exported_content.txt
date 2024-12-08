@@ -1,0 +1,1297 @@
+
+--------- 
+C:\Users\shoya\rbac-ui\src\App.css 
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\App.js 
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/common/Layout";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import UserManagement from "./pages/UserManagement";
+import RoleManagement from "./pages/RoleManagement";
+import PermissionManagement from "./pages/PermissionManagement";
+import PERMISSIONS from "./utils/permissions";
+import ProtectedRoute from "./components/common/ProtectedRoutes";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.SYSTEM.DASHBOARD}>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="users"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.USER.READ}>
+              <UserManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="roles"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.ROLE.READ}>
+              <RoleManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="permissions"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.ROLE.READ}>
+              <PermissionManagement />
+            </ProtectedRoute>
+          }
+        />
+      </Route>
+    </Routes>
+  );
+}
+
+export default App;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\App.test.js 
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\exported_content.txt 
+
+--------- 
+C:\Users\shoya\rbac-ui\src\App.css 
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\App.js 
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/common/Layout";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import UserManagement from "./pages/UserManagement";
+import RoleManagement from "./pages/RoleManagement";
+import PermissionManagement from "./pages/PermissionManagement";
+import PERMISSIONS from "./utils/permissions";
+import ProtectedRoute from "./components/common/ProtectedRoutes";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.SYSTEM.DASHBOARD}>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="users"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.USER.READ}>
+              <UserManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="roles"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.ROLE.READ}>
+              <RoleManagement />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="permissions"
+          element={
+            <ProtectedRoute requiredPermission={PERMISSIONS.ROLE.READ}>
+              <PermissionManagement />
+            </ProtectedRoute>
+          }
+        />
+      </Route>
+    </Routes>
+  );
+}
+
+export default App;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\App.test.js 
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\exported_content.txt 
+
+--------- 
+C:\Users\shoya\rbac-ui\src\App.css 
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-l   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\index.css 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\index.js 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\logo.svg 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3"><g fill="#61DAFB"><path d="M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6zM320.8 78.4z"/><circle cx="420.9" cy="296.5" r="45.7"/><path d="M520.5 78.1z"/></g></svg>   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\reportWebVitals.js 
+const reportWebVitals = onPerfEntry => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+export default reportWebVitals;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\setupTests.js 
+// jest-dom adds custom jest matchers for asserting on DOM nodes.
+// allows you to do things like:
+// expect(element).toHaveTextContent(/react/i)
+// learn more: https://github.com/testing-library/jest-dom
+import '@testing-library/jest-dom';
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\tailwind.config.js 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          500: "#0ea5e9",
+          600: "#0284c7",
+        },
+        gray: {
+          50: "#f9fafb",
+          100: "#f3f4f6",
+          200: "#e5e7eb",
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\test.bat 
+@echo off
+set "output=exported_content.txt"
+
+:: Clear the output file if it exists
+> "%output%" echo.
+
+:: Recursive function to process all files
+for /r %%F in (*) do (
+    echo Processing %%F...
+
+    :: Append the filename and relative path
+    echo --------- >> "%output%"
+    echo %%~fF >> "%output%"
+
+    :: Append the file contents
+    type "%%F" >> "%output%"
+    echo. >> "%output%"  :: Add a blank line after the content
+)
+
+echo Export completed. All content saved to "%output%".
+pause
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\common\Header.js 
+import React from "react";
+import { LogOut, User } from "lucide-react";
+
+function Header() {
+  return (
+    <header className="bg-white border-b p-4 flex justify-end items-center">
+      <div className="flex items-center space-x-4">
+        <div className="flex items-center">
+          <User className="mr-2" size={20} />
+          <span>Admin User</span>
+        </div>
+        <button className="flex items-center text-red-500 hover:bg-red-50 px-3 py-1 rounded">
+          <LogOut className="mr-2" size={20} />
+          Logout
+        </button>
+      </div>
+    </header>
+  );
+}
+
+export default Header;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\common\Layout.js 
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import Header from "./Header";
+
+function Layout() {
+  return (
+    <div className="flex h-screen">
+      <Sidebar />
+      <div className="flex-1 flex flex-col">
+        <Header />
+        <main className="flex-1 overflow-y-auto p-6 bg-gray-100">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}
+
+export default Layout;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\common\ProtectedRoutes.js 
+import React from "react";
+import { Navigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+
+function ProtectedRoute({ children, requiredPermission }) {
+  const { user, checkPermission } = useAuth();
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (requiredPermission && !checkPermission(requiredPermission)) {
+    return <Navigate to="/unauthorized" replace />;
+  }
+
+  return children;
+}
+
+export default ProtectedRoute;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\common\Sidebar.js 
+import React from "react";
+import { Link } from "react-router-dom";
+import { Home, Users, Shield, Lock } from "lucide-react";
+
+function Sidebar() {
+  const menuItems = [
+    {
+      name: "Dashboard",
+      icon: Home,
+      path: "/dashboard",
+    },
+    {
+      name: "Users",
+      icon: Users,
+      path: "/users",
+    },
+    {
+      name: "Roles",
+      icon: Shield,
+      path: "/roles",
+    },
+    {
+      name: "Permissions",
+      icon: Lock,
+      path: "/permissions",
+    },
+  ];
+
+  return (
+    <aside className="w-64 bg-white border-r">
+      <div className="p-4 border-b">
+        <h1 className="text-2xl font-bold">RBAC Manager</h1>
+      </div>
+      <nav className="p-4">
+        {menuItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className="flex items-center py-2 px-3 hover:bg-gray-100 rounded"
+          >
+            <item.icon className="mr-3" size={20} />
+            {item.name}
+          </Link>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+export default Sidebar;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\permissions\PermissionAssigner.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\permissions\PermissionMatrix.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\roles\RoleDetails.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\roles\RoleForm.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\roles\RoleList.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\users\UserDetails.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\users\UserForm.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\components\users\UserList.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\hooks\useAuth.js 
+import { useState } from "react";
+import useAuthStore from "../store/authStore";
+import { login, logout } from "../utils/auth";
+
+function useAuth() {
+  const [error, setError] = useState(null);
+  const { user, token } = useAuthStore();
+
+  const handleLogin = async (email, password) => {
+    try {
+      setError(null);
+      await login(email, password);
+    } catch (err) {
+      setError(err.message || "Login failed");
+    }
+  };
+
+  const handleLogout = () => {
+    logout();
+  };
+
+  const checkPermission = (requiredPermission) => {
+    if (!user) return false;
+
+    // Assuming user has a roles array with associated permissions
+    return user.roles.some((role) =>
+      role.permissions.includes(requiredPermission)
+    );
+  };
+
+  return {
+    user,
+    token,
+    error,
+    login: handleLogin,
+    logout: handleLogout,
+    checkPermission,
+  };
+}
+
+export default useAuth;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\hooks\usePermissions.js 
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\pages\Dashboard.js 
+import React, { useEffect } from "react";
+import { Users, Shield, Lock } from "lucide-react";
+import useUserStore from "../store/userStore";
+import useRoleStore from "../store/roleStore";
+
+function Dashboard() {
+  const { users, fetchUsers } = useUserStore();
+  const { roles, fetchRoles } = useRoleStore();
+
+  useEffect(() => {
+    fetchUsers();
+    fetchRoles();
+  }, []);
+
+  const statsCards = [
+    {
+      title: "Total Users",
+      value: users.length,
+      icon: Users,
+      color: "bg-blue-100 text-blue-600",
+    },
+    {
+      title: "Total Roles",
+      value: roles.length,
+      icon: Shield,
+      color: "bg-green-100 text-green-600",
+    },
+    {
+      title: "Total Permissions",
+      value: roles.reduce((total, role) => total + role.permissions.length, 0),
+      icon: Lock,
+      color: "bg-purple-100 text-purple-600",
+    },
+  ];
+
+  return (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
+
+      <div className="grid grid-cols-3 gap-6">
+        {statsCards.map((card) => (
+          <div
+            key={card.title}
+            className={`p-6 rounded-lg shadow-md flex items-center ${card.color}`}
+          >
+            <div className="mr-4">
+              <card.icon size={40} />
+            </div>
+            <div>
+              <p className="text-lg font-semibold">{card.title}</p>
+              <p className="text-3xl font-bold">{card.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 gap-6">
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-semibold mb-4">Recent Users</h2>
+          <ul>
+            {users.slice(0, 5).map((user) => (
+              <li
+                key={user.id}
+                className="flex justify-between py-2 border-b last:border-b-0"
+              >
+                <span>{user.name}</span>
+                <span className="text-gray-500">{user.email}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-semibold mb-4">Roles Overview</h2>
+          <ul>
+            {roles.map((role) => (
+              <li
+                key={role.id}
+                className="flex justify-between py-2 border-b last:border-b-0"
+              >
+                <span>{role.name}</span>
+                <span className="text-gray-500">
+                  {role.permissions.length} Permissions
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Dashboard;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\pages\Login.js 
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Simulate login
+    if (email && password) {
+      navigate("/dashboard");
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-md w-96">
+        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-2 border rounded mb-4"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-2 border rounded mb-6"
+            required
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default Login;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\pages\PermissionManagement.js 
+import React, { useState } from "react";
+import useRoleStore from "../store/roleStore";
+
+function PermissionManagement() {
+  const { roles } = useRoleStore();
+  const [selectedRole, setSelectedRole] = useState(null);
+
+  const allPermissions = [
+    {
+      category: "User Management",
+      permissions: ["create_user", "read_user", "update_user", "delete_user"],
+    },
+    {
+      category: "Role Management",
+      permissions: ["create_role", "read_role", "update_role", "delete_role"],
+    },
+    { category: "System", permissions: ["view_dashboard", "manage_settings"] },
+  ];
+
+  return (
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold">Permission Management</h1>
+
+      <div className="grid grid-cols-3 gap-6">
+        <div className="bg-white shadow-md rounded p-6">
+          <h2 className="text-xl font-semibold mb-4">Roles</h2>
+          <ul>
+            {roles.map((role) => (
+              <li
+                key={role.id}
+                onClick={() => setSelectedRole(role)}
+                className={`p-3 cursor-pointer hover:bg-gray-100 rounded ${
+                  selectedRole?.id === role.id ? "bg-blue-100" : ""
+                }`}
+              >
+                {role.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="col-span-2 bg-white shadow-md rounded p-6">
+          <h2 className="text-xl font-semibold mb-4">
+            Permissions for {selectedRole ? selectedRole.name : "Select a Role"}
+          </h2>
+          {selectedRole ? (
+            <div>
+              {allPermissions.map((category) => (
+                <div key={category.category} className="mb-6">
+                  <h3 className="text-lg font-semibold mb-3 border-b pb-2">
+                    {category.category}
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {category.permissions.map((permission) => (
+                      <div key={permission} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id={permission}
+                          checked={selectedRole.permissions.includes(
+                            permission
+                          )}
+                          onChange={() => {
+                            // Placeholder for permission toggle logic
+                            console.log(
+                              `Toggle ${permission} for ${selectedRole.name}`
+                            );
+                          }}
+                          className="mr-3"
+                        />
+                        <label htmlFor={permission} className="capitalize">
+                          {permission.replace("_", " ")}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <div className="mt-6 flex justify-end">
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded"
+                  onClick={() => {
+                    // Placeholder for save permissions logic
+                    console.log("Save permissions for", selectedRole.name);
+                  }}
+                >
+                  Save Permissions
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center text-gray-500 py-10">
+              Select a role to manage its permissions
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default PermissionManagement;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\pages\RoleManagement.js 
+import React, { useState, useEffect } from "react";
+import { Plus, Edit, Trash2 } from "lucide-react";
+import useRoleStore from "../store/roleStore";
+
+function RoleManagement() {
+  const { roles, addRole, updateRole, deleteRole, fetchRoles } = useRoleStore();
+  const [selectedRole, setSelectedRole] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const allPermissions = [
+    "create",
+    "read",
+    "update",
+    "delete",
+    "manage_users",
+    "manage_roles",
+    "view_dashboard",
+  ];
+
+  useEffect(() => {
+    fetchRoles();
+  }, []);
+
+  const handleAddEditRole = (roleData) => {
+    if (selectedRole) {
+      updateRole({ ...selectedRole, ...roleData });
+    } else {
+      addRole({
+        id: Date.now().toString(),
+        ...roleData,
+      });
+    }
+    setIsModalOpen(false);
+    setSelectedRole(null);
+  };
+
+  const RoleModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white p-8 rounded-lg w-96">
+        <h2 className="text-2xl mb-4">
+          {selectedRole ? "Edit Role" : "Add Role"}
+        </h2>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const permissions = allPermissions.filter(
+              (perm) => formData.get(perm) === "on"
+            );
+            handleAddEditRole({
+              name: formData.get("name"),
+              permissions,
+            });
+          }}
+        >
+          <input
+            name="name"
+            defaultValue={selectedRole?.name || ""}
+            placeholder="Role Name"
+            className="w-full p-2 border rounded mb-4"
+            required
+          />
+          <div className="mb-4">
+            <h3 className="font-semibold mb-2">Permissions</h3>
+            {allPermissions.map((permission) => (
+              <div key={permission} className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  name={permission}
+                  id={permission}
+                  defaultChecked={selectedRole?.permissions.includes(
+                    permission
+                  )}
+                  className="mr-2"
+                />
+                <label htmlFor={permission}>
+                  {permission.replace("_", " ").toUpperCase()}
+                </label>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-end space-x-2">
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(false)}
+              className="px-4 py-2 bg-gray-200 rounded"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Role Management</h1>
+        <button
+          onClick={() => {
+            setSelectedRole(null);
+            setIsModalOpen(true);
+          }}
+          className="flex items-center bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          <Plus className="mr-2" /> Add Role
+        </button>
+      </div>
+
+      <table className="w-full bg-white shadow-md rounded">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="p-3 text-left">Role Name</th>
+            <th className="p-3 text-left">Permissions</th>
+            <th className="p-3 text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {roles.map((role) => (
+            <tr key={role.id} className="border-b">
+              <td className="p-3">{role.name}</td>
+              <td className="p-3">
+                {role.permissions.map((perm) => (
+                  <span
+                    key={perm}
+                    className="bg-blue-100 text-blue-800 px-2 py-1 rounded mr-2 text-xs"
+                  >
+                    {perm.toUpperCase()}
+                  </span>
+                ))}
+              </td>
+              <td className="p-3 text-right">
+                <button
+                  onClick={() => {
+                    setSelectedRole(role);
+                    setIsModalOpen(true);
+                  }}
+                  className="text-blue-500 mr-3"
+                >
+                  <Edit size={20} />
+                </button>
+                <button
+                  onClick={() => deleteRole(role.id)}
+                  className="text-red-500"
+                >
+                  <Trash2 size={20} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {isModalOpen && <RoleModal />}
+    </div>
+  );
+}
+
+export default RoleManagement;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\pages\UserManagement.js 
+import React, { useState, useEffect } from "react";
+import { Plus, Edit, Trash2 } from "lucide-react";
+import useUserStore from "../store/userStore";
+import useRoleStore from "../store/roleStore";
+
+function UserManagement() {
+  const { users, addUser, updateUser, deleteUser, fetchUsers } = useUserStore();
+  const { roles, fetchRoles } = useRoleStore();
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    fetchUsers();
+    fetchRoles();
+  }, []);
+
+  const handleAddEditUser = (userData) => {
+    if (selectedUser) {
+      updateUser({ ...selectedUser, ...userData });
+    } else {
+      addUser({
+        id: Date.now().toString(),
+        ...userData,
+      });
+    }
+    setIsModalOpen(false);
+    setSelectedUser(null);
+  };
+
+  const UserModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white p-8 rounded-lg w-96">
+        <h2 className="text-2xl mb-4">
+          {selectedUser ? "Edit User" : "Add User"}
+        </h2>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            handleAddEditUser(Object.fromEntries(formData));
+          }}
+        >
+          <input
+            name="name"
+            defaultValue={selectedUser?.name || ""}
+            placeholder="Full Name"
+            className="w-full p-2 border rounded mb-4"
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            defaultValue={selectedUser?.email || ""}
+            placeholder="Email"
+            className="w-full p-2 border rounded mb-4"
+            required
+          />
+          <select
+            name="role"
+            defaultValue={selectedUser?.role || ""}
+            className="w-full p-2 border rounded mb-4"
+          >
+            {roles.map((role) => (
+              <option key={role.id} value={role.name}>
+                {role.name}
+              </option>
+            ))}
+          </select>
+          <div className="flex justify-end space-x-2">
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(false)}
+              className="px-4 py-2 bg-gray-200 rounded"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold">User Management</h1>
+        <button
+          onClick={() => {
+            setSelectedUser(null);
+            setIsModalOpen(true);
+          }}
+          className="flex items-center bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          <Plus className="mr-2" /> Add User
+        </button>
+      </div>
+
+      <table className="w-full bg-white shadow-md rounded">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="p-3 text-left">Name</th>
+            <th className="p-3 text-left">Email</th>
+            <th className="p-3 text-left">Role</th>
+            <th className="p-3 text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id} className="border-b">
+              <td className="p-3">{user.name}</td>
+              <td className="p-3">{user.email}</td>
+              <td className="p-3">{user.role}</td>
+              <td className="p-3 text-right">
+                <button
+                  onClick={() => {
+                    setSelectedUser(user);
+                    setIsModalOpen(true);
+                  }}
+                  className="text-blue-500 mr-3"
+                >
+                  <Edit size={20} />
+                </button>
+                <button
+                  onClick={() => deleteUser(user.id)}
+                  className="text-red-500"
+                >
+                  <Trash2 size={20} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {isModalOpen && <UserModal />}
+    </div>
+  );
+}
+
+export default UserManagement;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\store\authStore.js 
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
+const useAuthStore = create(
+  persist(
+    (set) => ({
+      user: null,
+      token: null,
+      login: (userData, token) => set({ user: userData, token }),
+      logout: () => set({ user: null, token: null }),
+      isAuthenticated: () => {
+        const state = useAuthStore.getState();
+        return !!state.token;
+      },
+    }),
+    {
+      name: "auth-storage",
+      getStorage: () => localStorage,
+    }
+  )
+);
+
+export default useAuthStore;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\store\roleStore.js 
+import { create } from "zustand";
+
+const useRoleStore = create((set) => ({
+  roles: [],
+  addRole: (role) =>
+    set((state) => ({
+      roles: [...state.roles, role],
+    })),
+  updateRole: (updatedRole) =>
+    set((state) => ({
+      roles: state.roles.map((role) =>
+        role.id === updatedRole.id ? updatedRole : role
+      ),
+    })),
+  deleteRole: (roleId) =>
+    set((state) => ({
+      roles: state.roles.filter((role) => role.id !== roleId),
+    })),
+  fetchRoles: async () => {
+    // Simulate API call
+    const mockRoles = [
+      {
+        id: "1",
+        name: "Admin",
+        permissions: ["create", "read", "update", "delete"],
+      },
+      {
+        id: "2",
+        name: "Editor",
+        permissions: ["read", "update"],
+      },
+    ];
+    set({ roles: mockRoles });
+  },
+}));
+
+export default useRoleStore;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\store\userStore.js 
+import { create } from "zustand";
+
+const useUserStore = create((set) => ({
+  users: [],
+  addUser: (user) =>
+    set((state) => ({
+      users: [...state.users, user],
+    })),
+  updateUser: (updatedUser) =>
+    set((state) => ({
+      users: state.users.map((user) =>
+        user.id === updatedUser.id ? updatedUser : user
+      ),
+    })),
+  deleteUser: (userId) =>
+    set((state) => ({
+      users: state.users.filter((user) => user.id !== userId),
+    })),
+  fetchUsers: async () => {
+    // Simulate API call
+    const mockUsers = [
+      { id: "1", name: "John Doe", email: "john@example.com", role: "Admin" },
+      { id: "2", name: "Jane Smith", email: "jane@example.com", role: "User" },
+    ];
+    set({ users: mockUsers });
+  },
+}));
+
+export default useUserStore;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\utils\api.js 
+import axios from "axios";
+import useAuthStore from "../store/authStore";
+
+const api = axios.create({
+  baseURL: "https://api.example.com/v1",
+});
+
+// Add a request interceptor to include token
+api.interceptors.request.use(
+  (config) => {
+    const token = useAuthStore.getState().token;
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+export default api;
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\utils\auth.js 
+import useAuthStore from "../store/authStore";
+import api from "./api";
+
+export const login = async (email, password) => {
+  try {
+    const response = await api.post("/login", { email, password });
+    const { user, token } = response.data;
+
+    useAuthStore.getState().login(user, token);
+    return user;
+  } catch (error) {
+    console.error("Login failed", error);
+    throw error;
+  }
+};
+
+export const logout = () => {
+  useAuthStore.getState().logout();
+};
+
+export const isAuthenticated = () => {
+  return useAuthStore.getState().isAuthenticated();
+};
+   :: Add a blank line after the content
+--------- 
+C:\Users\shoya\rbac-ui\src\utils\permissions.js 
+const PERMISSIONS = {
+  USER: {
+    CREATE: "create_user",
+    READ: "read_user",
+    UPDATE: "update_user",
+    DELETE: "delete_user",
+  },
+  ROLE: {
+    CREATE: "create_role",
+    READ: "read_role",
+    UPDATE: "update_role",
+    DELETE: "delete_role",
+  },
+  SYSTEM: {
+    DASHBOARD: "view_dashboard",
+    SETTINGS: "manage_settings",
+  },
+};
+
+export const hasPermission = (userPermissions, requiredPermission) => {
+  return userPermissions.includes(requiredPermission);
+};
+
+export const filterAccessibleRoutes = (userPermissions) => {
+  const accessibleRoutes = [];
+
+  if (hasPermission(userPermissions, PERMISSIONS.SYSTEM.DASHBOARD)) {
+    accessibleRoutes.push("/dashboard");
+  }
+
+  if (hasPermission(userPermissions, PERMISSIONS.USER.READ)) {
+    accessibleRoutes.push("/users");
+  }
+
+  if (hasPermission(userPermissions, PERMISSIONS.ROLE.READ)) {
+    accessibleRoutes.push("/roles");
+  }
+
+  return accessibleRoutes;
+};
+
+export default PERMISSIONS;
+   :: Add a blank line after the content

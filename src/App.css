@@ -1,0 +1,46 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans text-gray-700 bg-gray-100; /* Example base styles */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+
+a {
+  @apply text-blue-500 hover:underline;
+}
+input,
+select,
+textarea {
+  @apply w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+button {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline;
+}
+
+button.secondary {
+  /* Example of a secondary button style */
+  @apply bg-gray-300 hover:bg-gray-400 text-gray-700;
+}
+table {
+  @apply w-full border-collapse;
+}
+
+th,
+td {
+  @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+thead {
+  @apply bg-gray-100;
+}

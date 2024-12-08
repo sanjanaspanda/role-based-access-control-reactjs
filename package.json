@@ -1,0 +1,55 @@
+{
+  "name": "rbac-ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.10",
+    "@shadcn/ui": "^0.0.4",
+    "axios": "^1.7.9",
+    "cra-template": "1.2.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.4.16",
+    "zod": "^3.23.8",
+    "zustand": "^5.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
