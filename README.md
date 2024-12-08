@@ -2,6 +2,12 @@
 
 This project demonstrates a React application implementing Role-Based Access Control (RBAC). It provides a user interface for managing users, roles, and permissions.
 
+## Demo
+
+https://exquisite-capybara-e094a7.netlify.app/login
+email: admin@example.com
+password: admin123
+
 ## Features
 
 - User Management: Create, read, update, and delete users.
