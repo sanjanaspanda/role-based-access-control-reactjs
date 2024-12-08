@@ -34,13 +34,14 @@ These instructions will get you a copy of the project up and running on your loc
    ```
 3. Install dependencies:
    ```
-   npm install
+   npm install -g bun
+   bun install
    ```
 
 ### Running the Application
 
 ```
-npm start
+bun start
 ```
 
 The application will run on `http://localhost:3000` by default.
