@@ -10,10 +10,13 @@ import PERMISSIONS from "./utils/permissions";
 import ProtectedRoute from "./components/common/ProtectedRoutes";
 import Unauthorized from "./pages/Unauthorized";
 import useUserStore from "./store/userStore";
+import useRoleStore from "./store/roleStore";
 function App() {
   const { fetchUsers } = useUserStore();
+  const { fetchRoles } = useRoleStore();
   useEffect(() => {
     fetchUsers();
+    fetchRoles();
   }, []);
   return (
     <Routes>
