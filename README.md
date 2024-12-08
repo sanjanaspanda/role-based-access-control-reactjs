@@ -4,9 +4,9 @@ This project demonstrates a React application implementing Role-Based Access Con
 
 ## Demo
 
-https://exquisite-capybara-e094a7.netlify.app/login
-email: admin@example.com
-password: admin123
+- https://exquisite-capybara-e094a7.netlify.app/login
+- email: admin@example.com
+- password: admin123
 
 ## Features
 
